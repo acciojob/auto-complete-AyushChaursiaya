@@ -25,7 +25,7 @@ const SearchItem = () => {
         );
         setSuggestions(filteredFruits);
         setIsLoading(false);
-      }, 300); // Simulate network latency with a timeout
+      }, 4000); // Simulate network latency with a timeout
     };
 
     fetchSuggestions();
