@@ -24,16 +24,19 @@ const SearchItem = () => {
         if(inputText === '') {
             setItemList([])
             return;
+        }else{
+            fetchSuggestions();
         }
-        fetchSuggestions();
+
     }, [inputText]);
 
     const handleInput = (e) => {
         setInputText(e.target.value);
     }
+
     return (
         <>
-            <div>Search Item</div>
+            <h1>Search Item</h1>
             <div>
                 <input type='text' value={inputText} placeholder='search the Items...' onChange={handleInput} />
                 {isLoading && <p>loading...</p>}
@@ -41,8 +44,8 @@ const SearchItem = () => {
                     !isLoading && itemList.length > 0 && (
                         <ul>
                             {
-                                itemList.map((fruit, index) => (
-                                    <li key={index}>{fruit}</li>
+                                itemList.map((fruit) => (
+                                    <li key={fruit}>{fruit}</li>
                                 ))
                             }
                         </ul>
