@@ -37,8 +37,8 @@ const SearchItem = () => {
                 <input type='text' value={inputText} placeholder='search the Items...' onChange={handleInput} />
                 {isLoading && <p>loading...</p>}
                 <ul>
-                    {!isLoading && itemList.map((fruit) => (
-                        <li key={fruit}>{fruit}</li>
+                    {!isLoading && itemList.map((fruit, index) => (
+                        <li key={index}>{fruit}</li>
                     ))}
                 </ul>
             </div>
